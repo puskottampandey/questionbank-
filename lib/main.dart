@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:questionbank/splash.dart';
 
 void main() {
   runApp(const MyApp());
+}
+
+void test() {
+  String? name = null;
+  print(name);
+  name = 'foo';
+  print(name);
 }
 
 class MyApp extends StatelessWidget {
@@ -26,7 +32,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: splash(),
+      home: const MyHomePage(title: 'flutter Demo homepage'),
     );
   }
 }
