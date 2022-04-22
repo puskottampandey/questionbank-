@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:html';
 
 import 'package:flutter/material.dart';
 
@@ -45,46 +46,53 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Questionbank"),
-      ),
-      drawer: Drawer(child: Text("QuestionBank")),
-    );
-  }
-}
-
-class NavigationDrawer extends StatelessWidget {
-  const NavigationDrawer({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: Drawer(
+        appBar: AppBar(
+          title: const Text("Questionbank"),
+        ),
+        drawer: Drawer(
           child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.blue,
-            ),
-            child: Text("Questionbank"),
+            padding: EdgeInsets.only(),
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+                child: Text("QuestionBank"),
+              ),
+              ListTile(
+                leading: Icon(Icons.notification_add),
+                title: Text("Notification"),
+              ),
+              ListTile(
+                leading: Icon(Icons.mail),
+                title: Text("Mail"),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.settings),
+                title: Text("Setting"),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.send),
+                title: Text("Send Feedback "),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.rate_review),
+                title: Text("Rate us "),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              )
+            ],
           ),
-          ListTile(
-            title: const Text("About us "),
-            onTap: () {},
-          ),
-          ListTile(
-            title: const Text(" Settings"),
-            onTap: () {},
-          ),
-          ListTile(
-            title: const Text("send  Feedback"),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-        ],
-      )),
-    );
+        ));
   }
 }
