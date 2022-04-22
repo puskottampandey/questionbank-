@@ -28,13 +28,13 @@ class SplashScreenState extends State<HomePage> {
     super.initState();
     Timer(
         const Duration(seconds: 2),
-        () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => Homepage())));
+        () => Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const Homepage())));
   }
 
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.green,
+      color: Colors.blue,
     );
   }
 }
@@ -44,6 +44,47 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Questionbank"),
+      ),
+      drawer: Drawer(child: Text("QuestionBank")),
+    );
+  }
+}
+
+class NavigationDrawer extends StatelessWidget {
+  const NavigationDrawer({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      drawer: Drawer(
+          child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.blue,
+            ),
+            child: Text("Questionbank"),
+          ),
+          ListTile(
+            title: const Text("About us "),
+            onTap: () {},
+          ),
+          ListTile(
+            title: const Text(" Settings"),
+            onTap: () {},
+          ),
+          ListTile(
+            title: const Text("send  Feedback"),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+        ],
+      )),
+    );
   }
 }
