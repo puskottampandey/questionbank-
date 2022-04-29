@@ -14,9 +14,12 @@ class Homepage extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.only(),
             children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(color: (Colors.blue)),
-                child: Text("QuestionBank"),
+              DrawerHeader(
+                decoration: BoxDecoration(color: Colors.blue.shade900),
+                child: Text(
+                  "Questionbank",
+                  style: TextStyle(fontSize: 30, color: Colors.white),
+                ),
               ),
               ListTile(
                 leading: Icon(Icons.notification_add),
