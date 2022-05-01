@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:questionbank/Notificationscreen.dart';
 
-class Homepage extends StatelessWidget {
+class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
 
+  @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,10 +28,14 @@ class Homepage extends StatelessWidget {
                 ),
               ),
               ListTile(
-                leading: Icon(Icons.notification_add),
-                title: Text("Notification"),
-                onTap: () {},
-              ),
+                  leading: Icon(Icons.notification_add),
+                  title: Text("Notification"),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: ((context) => NotificationScreen())));
+                  }),
               ListTile(
                 leading: Icon(Icons.mail),
                 title: Text("Mail"),
