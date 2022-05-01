@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:questionbank/Notificationscreen.dart';
+import 'package:questionbank/SettingsScreen.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -22,10 +24,14 @@ class Homepage extends StatelessWidget {
                 ),
               ),
               ListTile(
-                leading: Icon(Icons.notification_add),
-                title: Text("Notification"),
-                onTap: () {},
-              ),
+                  leading: Icon(Icons.notification_add),
+                  title: Text("Notification"),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: ((context) => NotificationScreen())));
+                  }),
               ListTile(
                 leading: Icon(Icons.mail),
                 title: Text("Mail"),
@@ -37,7 +43,10 @@ class Homepage extends StatelessWidget {
                 leading: Icon(Icons.settings),
                 title: Text("Setting"),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => SettingScreen())));
                 },
               ),
               ListTile(
