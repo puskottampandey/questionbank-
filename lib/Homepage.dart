@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:questionbank/settings_screen.dart';
+import 'package:questionbank/notification_screen.dart';
+
 class Homepage extends StatelessWidget {
   const Homepage({Key? key}) : super(key: key);
 
@@ -12,50 +15,63 @@ class Homepage extends StatelessWidget {
         ),
         drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.only(),
+            padding: const EdgeInsets.only(),
             children: [
               DrawerHeader(
                 decoration: BoxDecoration(color: Colors.blue.shade900),
-                child: Text(
+                child: const Text(
                   "Questionbank",
-                  style: TextStyle(fontSize: 30, color: Colors.white),
+                  style: const TextStyle(fontSize: 30, color: Colors.white),
                 ),
               ),
               ListTile(
-                leading: Icon(Icons.notification_add),
-                title: Text("Notification"),
-                onTap: () {},
-              ),
+                  leading: const Icon(Icons.notification_add),
+                  title: const Text("Notification"),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: ((context) => NotificationScreen())));
+                  }),
               ListTile(
-                leading: Icon(Icons.mail),
-                title: Text("Mail"),
+                leading: const Icon(Icons.mail),
+                title: const Text("Mail"),
                 onTap: () {
                   Navigator.pop(context);
                 },
               ),
               ListTile(
-                leading: Icon(Icons.settings),
-                title: Text("Setting"),
+                leading: const Icon(Icons.settings),
+                title: const Text("Setting"),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => SettingScreen())));
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.send),
+                title: const Text("Send Feedback "),
                 onTap: () {
                   Navigator.pop(context);
                 },
               ),
               ListTile(
-                leading: Icon(Icons.send),
-                title: Text("Send Feedback "),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.rate_review),
-                title: Text("Rate us "),
+                leading: const Icon(Icons.rate_review),
+                title: const Text("Rate us "),
                 onTap: () {
                   Navigator.pop(context);
                 },
               )
             ],
           ),
+        ),
+        body: ListView.builder(
+          itemCount: 6,
+          itemBuilder: (context, i) {
+            return const Card(child: Text("hello"));
+          },
         ));
   }
 }
