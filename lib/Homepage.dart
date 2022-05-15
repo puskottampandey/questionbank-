@@ -3,9 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:questionbank/settings_screen.dart';
 import 'package:questionbank/notification_screen.dart';
 
-class Homepage extends StatelessWidget {
+class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
 
+  @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,10 +73,9 @@ class Homepage extends StatelessWidget {
           ),
         ),
         body: ListView.builder(
-          itemCount: 6,
-          itemBuilder: (context, i) {
-            return const Card(child: Text("hello"));
-          },
-        ));
+            itemCount: 6,
+            itemBuilder: (context, i) {
+              return const Card();
+            }));
   }
 }
