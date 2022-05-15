@@ -76,7 +76,9 @@ class _HomepageState extends State<Homepage> {
         body: ListView.builder(
             itemCount: 6,
             itemBuilder: (context, i) {
-              return const Card();
+              return const Card(
+                child: Text('hello'),
+              );
             }));
   }
 }
