@@ -26,7 +26,7 @@ class _HomepageState extends State<Homepage> {
                 decoration: BoxDecoration(color: Colors.blue.shade900),
                 child: const Text(
                   "Questionbank",
-                  style: const TextStyle(fontSize: 30, color: Colors.white),
+                  style: TextStyle(fontSize: 30, color: Colors.white),
                 ),
               ),
               ListTile(
@@ -36,7 +36,8 @@ class _HomepageState extends State<Homepage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: ((context) => NotificationScreen())));
+                            builder: ((context) =>
+                                const NotificationScreen())));
                   }),
               ListTile(
                 leading: const Icon(Icons.mail),
@@ -52,7 +53,7 @@ class _HomepageState extends State<Homepage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: ((context) => SettingScreen())));
+                          builder: ((context) => const SettingScreen())));
                 },
               ),
               ListTile(
