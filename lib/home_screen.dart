@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:questionbank/Send%20Feedback-screen.dart';
 
 import 'package:questionbank/settings_screen.dart';
 import 'package:questionbank/notification_screen.dart';
@@ -60,7 +61,10 @@ class _HomepageState extends State<Homepage> {
                 leading: const Icon(Icons.send),
                 title: const Text("Send Feedback "),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => const SendFeedback())));
                 },
               ),
               ListTile(

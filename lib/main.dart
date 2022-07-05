@@ -33,6 +33,7 @@ class SplashScreenState extends State<HomePage> {
             MaterialPageRoute(builder: (context) => const Homepage())));
   }
 
+  @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.blue.shade900,
