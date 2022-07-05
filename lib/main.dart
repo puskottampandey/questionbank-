@@ -6,14 +6,13 @@ import 'package:questionbank/home_screen.dart';
 void main() {
   runApp(
     MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const HomePage(),
+    debugShowCheckedModeBanner: false,
+    title: 'Flutter Demo',
+    theme: ThemeData(
+      primarySwatch: Colors.blue,
     ),
-  );
+    home: const HomePage(),
+  ));
 }
 
 class HomePage extends StatefulWidget {

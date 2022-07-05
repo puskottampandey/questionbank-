@@ -80,9 +80,21 @@ class _HomepageState extends State<Homepage> {
         body: ListView.builder(
             itemCount: 6,
             itemBuilder: (context, i) {
-              return const Card(
-                child: Text('hello'),
-              );
+              return SizedBox(
+                  height: 150,
+                  width: 50,
+                  child: Card(
+                    child: Center(
+                      child: Row(
+                        children: [
+                          Text(
+                            "Civil",
+                            style: TextStyle(color: Colors.blue.shade900),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ));
             }));
   }
 }
