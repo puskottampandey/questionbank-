@@ -15,86 +15,78 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: (Colors.blue.shade900),
-          title: const Text("Questionbank"),
-        ),
-        drawer: Drawer(
-          child: ListView(
-            padding: const EdgeInsets.only(),
-            children: [
-              DrawerHeader(
-                decoration: BoxDecoration(color: Colors.blue.shade900),
-                child: const Text(
-                  "Questionbank",
-                  style: TextStyle(fontSize: 30, color: Colors.white),
-                ),
+      appBar: AppBar(
+        backgroundColor: (Colors.blue.shade900),
+        title: const Text("Questionbank"),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: const EdgeInsets.only(),
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(color: Colors.blue.shade900),
+              child: const Text(
+                "Questionbank",
+                style: TextStyle(fontSize: 30, color: Colors.white),
               ),
-              ListTile(
-                  leading: const Icon(Icons.notification_add),
-                  title: const Text("Notification"),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: ((context) =>
-                                const NotificationScreen())));
-                  }),
-              ListTile(
-                leading: const Icon(Icons.mail),
-                title: const Text("Mail"),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                leading: const Icon(Icons.settings),
-                title: const Text("Setting"),
+            ),
+            ListTile(
+                leading: const Icon(Icons.notification_add),
+                title: const Text("Notification"),
                 onTap: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: ((context) => const SettingScreen())));
-                },
-              ),
-              ListTile(
-                leading: const Icon(Icons.send),
-                title: const Text("Send Feedback "),
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: ((context) => const SendFeedback())));
-                },
-              ),
-              ListTile(
-                leading: const Icon(Icons.rate_review),
-                title: const Text("Rate us "),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              )
-            ],
-          ),
+                          builder: ((context) => const NotificationScreen())));
+                }),
+            ListTile(
+              leading: const Icon(Icons.mail),
+              title: const Text("Mail"),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.settings),
+              title: const Text("Setting"),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: ((context) => const SettingScreen())));
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.send),
+              title: const Text("Send Feedback "),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: ((context) => const SendFeedback())));
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.rate_review),
+              title: const Text("Rate us "),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            )
+          ],
         ),
-        body: ListView.builder(
-            itemCount: 6,
-            itemBuilder: (context, i) {
-              return SizedBox(
-                  height: 150,
-                  width: 50,
-                  child: Card(
-                    child: Center(
-                      child: Row(
-                        children: [
-                          Text(
-                            "Civil",
-                            style: TextStyle(color: Colors.blue.shade900),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ));
-            }));
+      ),
+      body: ListView(padding: const EdgeInsets.all(8), children: <Widget>[
+        Container(
+            decoration: BoxDecoration(color: Colors.blue.shade900),
+            padding: const EdgeInsets.all(8),
+            height: 50,
+            child: const Center(
+                child: Text(
+              "civil ",
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            )))
+      ]),
+    );
   }
 }
