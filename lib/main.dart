@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:questionbank/home_screen.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
+  runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     title: 'Flutter Demo',
     theme: ThemeData(

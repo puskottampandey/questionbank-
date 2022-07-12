@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:questionbank/Mail_screen.dart';
 import 'package:questionbank/Send%20Feedback-screen.dart';
-
+import 'package:questionbank/civil_subject.dart';
 import 'package:questionbank/settings_screen.dart';
 import 'package:questionbank/notification_screen.dart';
 
@@ -12,6 +13,8 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  List<String> courses = ["civil", "auto "];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,12 +42,21 @@ class _HomepageState extends State<Homepage> {
                       MaterialPageRoute(
                           builder: ((context) => const NotificationScreen())));
                 }),
+            const Divider(
+              height: 0,
+            ),
             ListTile(
               leading: const Icon(Icons.mail),
               title: const Text("Mail"),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: ((context) => const MailScreen())));
               },
+            ),
+            const Divider(
+              height: 0,
             ),
             ListTile(
               leading: const Icon(Icons.settings),
@@ -56,6 +68,9 @@ class _HomepageState extends State<Homepage> {
                         builder: ((context) => const SettingScreen())));
               },
             ),
+            const Divider(
+              height: 0,
+            ),
             ListTile(
               leading: const Icon(Icons.send),
               title: const Text("Send Feedback "),
@@ -66,27 +81,48 @@ class _HomepageState extends State<Homepage> {
                         builder: ((context) => const SendFeedback())));
               },
             ),
+            const Divider(
+              height: 0,
+            ),
             ListTile(
               leading: const Icon(Icons.rate_review),
               title: const Text("Rate us "),
               onTap: () {
                 Navigator.pop(context);
               },
-            )
+            ),
+            const Divider(),
           ],
         ),
       ),
-      body: ListView(padding: const EdgeInsets.all(8), children: <Widget>[
-        Container(
-            decoration: BoxDecoration(color: Colors.blue.shade900),
-            padding: const EdgeInsets.all(8),
-            height: 50,
-            child: const Center(
-                child: Text(
-              "civil ",
-              style: TextStyle(color: Colors.white, fontSize: 20),
-            )))
-      ]),
+      body: ListView.builder(
+          itemCount: 1,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.all(5),
+              child: ListTile(
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(color: Colors.blue.shade900, width: 1),
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                title: Center(
+                  child: Text(
+                    "CIVIL ENGINEER",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.blue.shade900,
+                    ),
+                  ),
+                ),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => const CivilScreen())));
+                },
+              ),
+            );
+          }),
     );
   }
 }
